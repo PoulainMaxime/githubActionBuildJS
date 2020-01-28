@@ -13,7 +13,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'node:10.16'
+  image: 'node:10'
   args:
     - cd ${{inputs.path}} && ${{inputs.cmd}} install
     - cd ${{inputs.path}} && ${{inputs.cmd}} run build
