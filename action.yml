@@ -12,18 +12,9 @@ inputs:
     description: 'Add path to your vuejs project'
     required: true
 runs:
-  using: 'node12'
+  using: 'docker'
+  image: 'node:10.16'
   args:
-    - name: Checkout
-      uses: actions/checkout@v2
-    - name: install dependences
-      run: cd ${{inputs.path}} && ${{inputs.cmd}} install
-    - name: build
-      run: cd ${{inputs.path}} && ${{inputs.cmd}} run build
-    - name: remove node_modules
-      run: cd ${{inputs.path}} && rm -rf node_modules
-    - name: create artifact
-      uses: actions/upload-artifact@v1
-      with:
-        name: vue_projet
-        path: ./${{inputs.path}}
+    - cd ${{inputs.path}} && ${{inputs.cmd}} install
+    - cd ${{inputs.path}} && ${{inputs.cmd}} run build
+    - cd ${{inputs.path}} && rm -rf node_modules
