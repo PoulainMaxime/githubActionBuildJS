@@ -1,0 +1,15 @@
+name: Building JS
+on: [push]
+jobs:
+  build-npm:
+    runs-on: ubuntu-latest
+    name: building with npm
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: install dependences
+        run: cd my_projet && npm install
+      - name: build
+        run: cd my_projet && npm run build
+      - name: remove node_modules
+        run: cd my_projet && rm -rf node_modules
