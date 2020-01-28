@@ -1,5 +1,9 @@
 name: Building JS
 author: Mafiia__
+description: 'An easy GA to build your JS projet without dependencies'
+branding:
+  icon: 'check'
+  color: 'blue'
 inputs:
   cmd:
     description: 'Add some config for vuejs project'
@@ -7,11 +11,10 @@ inputs:
   path:
     description: 'Add path to your vuejs project'
     required: true
-jobs:
-  build:
-    runs-on: ubuntu-latest
-    name: building with npm
-    steps:
+runs:
+  using: 'docker'
+    image: 'node:10.16'
+    args:
       - name: Checkout
         uses: actions/checkout@v2
       - name: install dependences
