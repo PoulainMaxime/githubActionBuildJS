@@ -15,6 +15,5 @@ runs:
   using: 'docker'
   image: 'node:10'
   args:
-    - cd ${{inputs.path}} && ${{inputs.cmd}} install
-    - cd ${{inputs.path}} && ${{inputs.cmd}} run build
-    - cd ${{inputs.path}} && rm -rf node_modules
+    - ${{ inputs.cmd }}
+    - ${{ inputs.path }}
