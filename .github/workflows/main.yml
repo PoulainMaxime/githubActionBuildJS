@@ -1,20 +1,27 @@
 name: Building JS
-on: [push]
+on: [push, pull_request]
+inputs:
+  cmd:
+    description: 'Add some config for vuejs project'
+    required: true
+  path:
+    description: 'Add path to your vuejs project'
+    required: true
 jobs:
-  build-npm:
+  build:
     runs-on: ubuntu-latest
     name: building with npm
     steps:
       - name: Checkout
         uses: actions/checkout@v2
       - name: install dependences
-        run: cd my_projet && npm install
+        run: cd {{inputs.path}} && {{inputs.cmd}} install
       - name: build
-        run: cd my_projet && npm run build
+        run: cd {{inputs.path}} && {{inputs.cmd}} run build
       - name: remove node_modules
-        run: cd my_projet && rm -rf node_modules
+        run: cd {{inputs.path}} && rm -rf node_modules
       - name: create artifact
         uses: actions/upload-artifact@v1
         with:
           name: vue_projet
-          path: ./my_projet
+          path: ./{{inputs.path}}
