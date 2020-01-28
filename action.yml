@@ -12,8 +12,7 @@ inputs:
     description: 'Add path to your vuejs project'
     required: true
 runs:
-  using: 'docker'
-  image: 'node:10.16'
+  using: 'node10'
   args:
     - name: Checkout
       uses: actions/checkout@v2
