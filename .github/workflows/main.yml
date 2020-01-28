@@ -13,3 +13,8 @@ jobs:
         run: cd my_projet && npm run build
       - name: remove node_modules
         run: cd my_projet && rm -rf node_modules
+      - name: create artifact
+        uses: actions/upload-artifact@v1
+        with:
+          name: vue_projet
+          path: ./my_projet
