@@ -13,7 +13,7 @@ inputs:
     required: true
 runs:
   using: 'docker'
-  image: 'node:10'
+  image: 'Dockerfile'
   args:
     - ${{ inputs.cmd }}
     - ${{ inputs.path }}
