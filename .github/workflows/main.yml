@@ -1,4 +1,5 @@
 name: Building JS
+on: [push]
 author: Mafiia__
 description: 'An easy GA to build your JS projet without dependencies'
 branding:
