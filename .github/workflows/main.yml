@@ -1,5 +1,8 @@
 name: Building JS
 on: [push, pull_request]
+branding:
+  icon: 'check'
+  color: 'blue'
 inputs:
   cmd:
     description: 'Add some config for vuejs project'
