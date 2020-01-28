@@ -10,7 +10,7 @@ inputs:
     required: true
   path:
     description: 'Add path to your vuejs project'
-    required: true
+    required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
