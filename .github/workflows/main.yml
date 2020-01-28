@@ -7,7 +7,7 @@ inputs:
   path:
     description: 'Add path to your vuejs project'
     required: true
-runs:
+jobs:
   build:
     runs-on: ubuntu-latest
     name: building with npm
