@@ -5,4 +5,4 @@ FROM node:10.16
 COPY entrypoint.sh /entrypoint.sh
 
 # Code file to execute when the docker container starts up (`entrypoint.sh`)
-ENTRYPOINT ["/bin/bash entrypoint.sh"]
+ENTRYPOINT ["entrypoint.sh"]
