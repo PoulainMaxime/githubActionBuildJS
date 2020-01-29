@@ -1,6 +1,7 @@
 #!/bin/bash
 set -e
 
+
 if [ -z $2 ]; then
   if [ "$1" == "npm" ]; then
     echo "Using NPM in $2 to install dependencies"
