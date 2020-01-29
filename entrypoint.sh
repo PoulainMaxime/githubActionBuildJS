@@ -2,7 +2,7 @@
 
 
 if [ -z $2 ]; then
-  if [ "$1" == "npm" ]; then
+  if [ $1 == "npm" ]; then
     echo "Using NPM in $2 to install dependencies"
     $1 install
     $1 run build
@@ -17,7 +17,7 @@ if [ -z $2 ]; then
   fi
 fi
 
-if [ "$1" == "npm" ]; then
+if [ $1 == "npm" ]; then
   echo "Using NPM to install dependencies"
   $1 --prefix $2/ install
   $1 --prefix $2/ run build
