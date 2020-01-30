@@ -9,6 +9,6 @@ fi
 
 echo "Using $1 to install dependencies"
 $1 install
-$1 un build
+$1 run build
 rm -rf node_modules
 $1 install --production
