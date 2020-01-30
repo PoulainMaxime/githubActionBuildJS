@@ -8,16 +8,8 @@ then
   cd $2
 fi
 
-if [ "$1" == "npm" ]; then
-  echo "Using NPM to install dependencies"
-  $1 install
-  $1  un build
-  rm -rf node_modules
-  $1 install --production
-else
-  echo "Using YARN to install dependencies"
-  $1 install
-  $1 run build
-  rm -rf node_modules
-  $1 install --production
-fi
+echo "Using NPM to install dependencies"
+$1 install
+$1 un build
+rm -rf node_modules
+$1 install --production
